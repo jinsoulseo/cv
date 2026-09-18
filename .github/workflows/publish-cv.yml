@@ -1,0 +1,75 @@
+name: Publish CV
+
+# Runs whenever Overleaf pushes new CV source to this repo
+# (Overleaf: Menu > GitHub > Push Overleaf changes), and on demand.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Overleaf may rename the main file; find it rather than hard-code it.
+      - name: Locate main .tex
+        id: find
+        run: |
+          root=$(grep -l '\\documentclass' *.tex | head -1)
+          if [ -z "$root" ]; then
+            echo "No .tex file with \\documentclass found in repo root." >&2
+            exit 1
+          fi
+          echo "Main file: $root"
+          echo "root=$root" >> "$GITHUB_OUTPUT"
+          echo "stem=${root%.tex}" >> "$GITHUB_OUTPUT"
+
+      - name: Compile
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ steps.find.outputs.root }}
+
+      - name: Assemble Pages site
+        run: |
+          mkdir -p _site
+          cp "${{ steps.find.outputs.stem }}.pdf" _site/cv.pdf
+          cat > _site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <title>Jinsoul Seo — CV</title>
+          <meta http-equiv="refresh" content="0; url=cv.pdf">
+          <link rel="canonical" href="cv.pdf">
+          </head>
+          <body style="font-family:Georgia,serif;max-width:32rem;margin:6rem auto;padding:0 1rem">
+          <p>Opening the CV&hellip; if nothing happens, <a href="cv.pdf">download it here</a>.</p>
+          </body>
+          </html>
+          HTML
+          ls -la _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
