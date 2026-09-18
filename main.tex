@@ -1,0 +1,250 @@
+\documentclass[11pt]{article}
+%\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+%\textheight=10in
+\pagestyle{empty}
+%\raggedbottom
+\raggedright
+\usepackage{fullpage}
+
+\usepackage{multicol}
+
+\usepackage{hyperref}
+
+\addtolength{\oddsidemargin}{-.2in}
+\addtolength{\evensidemargin}{-.2in}
+\addtolength{\textwidth}{.4in}
+
+%\setlength{\topmargin}{2in}
+
+\addtolength{\topmargin}{0in}
+\addtolength{\textheight}{1.5in}
+
+%  \renewcommand{\encodingdefault}{cg}
+  %\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+
+\newcommand{\tab}{\hspacet *{2em}}
+
+\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1}   #2 \end{verse}  }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\employer}[3]{{ \textbf{#1} \hfill #2\\ \textbf{\emph{#3}}\\  }}
+\newcommand{\employerwithguide}[4]{{ \textbf{#1} \hfill(#2)\\ \textbf{\emph{#3}}\\ \emph{#4}  }}
+\newcommand{\project}[3]{{ \textbf{#1} (#2)\\ \emph{#3}\\  }}
+\newcommand{\projectnoguide}[2]{{ \textbf{#1} (#2)\\  }}
+\newcommand{\contact}[2]{
+%\vspace*{-8pt}
+\begin{center}
+{\huge \scshape {\textbf{#1}}}\\
+%#2 \lineunder
+#2
+\end{center}
+\vspace*{-8pt}
+}
+\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2}\end{picture}\ }
+\newcommand{\lbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{3}\end{picture}\ }
+\newenvironment{achievements}{
+    \begin{list}{$\lbt$}{
+        \topsep 0pt
+        \itemsep 0pt
+        \addtolength{\leftmargin}{-0.1in}
+    }
+}
+{
+    \vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses}[4]{
+ \textbf{#1} \hfill{#2}\\
+    #3\\
+\vspace*{5pt}
+}
+\newcommand{\school}[4]{
+ \textbf{#1} #2 $\bullet$ #3\\
+#4 \\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\small
+\smallskip
+\vspace*{-35pt}
+
+\contact{Jinsoul Seo}
+
+\begin{center}
+Last update: September 2026
+\end{center}
+\medskip
+
+\begin{multicols}{2}
+\hspace*{-15pt}\large{Simon Business School
+\\ \hspace*{-15pt}University of Rochester
+\\ \hspace*{-15pt}Rochester, NY, 14620}
+
+\columnbreak
+Phone: +1 (585) 604-7166
+\\Email: jseo13@simon.rochester.edu
+\end{multicols}
+\bigskip
+
+\header{\Large{Education}}
+\vspace{2mm}
+
+\schoolwithcourses{Simon Business School, University of Rochester, Rochester, NY}{2022 - 2028 (\textit{Expected})}{Ph.D. in Quantitative Marketing. \\ M.S. in Business Research}
+
+
+\schoolwithcourses{KAIST College of Business, Seoul}{2020 - 2022}{M.S. in Management Engineering - Managerial Economics.}
+
+\schoolwithcourses{Korea Advanced Institute of Science and Technology (KAIST), Daejeon}{2012 - 2017}{B.S. in Mathematical Sciences.}
+
+\bigskip
+
+\header{\Large{Research Interests}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{Digital Marketing, Marketing and Public Policy, Empirical Industrial Organization.}
+\end{achievements}
+\bigskip
+
+
+\header{\Large{Working Paper}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{``Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?"} (coauthoring with Hana Choi and Minkyung Kim, revise \& resubmit at \emph{Marketing Science}) \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6726100}{[SSRN]}
+\end{achievements}
+\bigskip
+
+\header{\Large{Working in Progress}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{``Do Survivors Respond? Rival Conduct and Demand Succession When a Retail Chain Exits"}
+\end{achievements}
+\bigskip
+
+
+\header{\Large{Contributed Presentations}}
+\vspace{2mm}
+\begin{achievements}
+    \item \textbf{``Do Review Solicitations Elicit Reviews Where They Matter for Sales and Returns?"} (coauthoring with Hana Choi and Minkyung Kim)
+    \begin{itemize}
+        \item[-] 2026 ISMS Marketing Science Conference (\textit{Presented by Hana Choi}) \hfill{} 2026
+        \item[-] Vienna University of Economics and Business (\textit{Presented by Hana Choi}) \hfill{} 2026
+        \item[-] 2026 Marketing Dynamics Conference (\textit{Presented by Hana Choi}) \hfill{} 2026
+        \item[-] 20th Annual Bass UTD-FORMS Conference (\textit{Presented by Hana Choi}) \hfill{} 2026
+        \item[-] Business and Marketing Analytics Seminar (\textit{Presented by Hana Choi}) \hfill{} 2025
+        \item[-] Virtual Quantitative Marketing Seminar (\textit{Presented by Minkyung Kim}) \hfill{} 2025
+        \item[-] 2025 London Business School Marketing Camp (\textit{Presented by Minkyung Kim}) \hfill{} 2025
+        \item[-] 2025 ISMS Marketing Science Conference (\textit{Presented by Minkyung Kim}) \hfill{} 2025
+        \item[-] 2024 Conference on AI, ML, and Business Analytics (\textit{Presented by Hana Choi}) \hfill{} 2024
+        \item[-] 2024 Conference on Digital Experimentation at MIT (\textit{Presented by Minkyung Kim}) \hfill{} 2024
+        \item[-] 2024 ISMS Marketing Science Conference (\textit{Presenter}) \hfill{} 2024
+    \end{itemize}
+\end{achievements}
+\bigskip
+
+\newpage
+
+\header{\Large{Research Experience}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{Simon Business School, University of Rochester, NY} \\
+\begin{normalsize}
+    \textit{Research Assistant}
+\end{normalsize}
+  \begin{itemize}
+      \item[-] Hana Choi, Assistant Professor in Marketing, Dec2022 - Sep2023
+      
+  \end{itemize}
+% \item \textbf{KAIST College of Business, Korea Advanced Institute of Science and Technology, Seoul} \\
+% \begin{normalsize}
+%     \textit{Master's Thesis}
+% \end{normalsize}
+%   \begin{itemize}
+%       \item[-] ``Selling Conspicuous Goods to Status-seeking Consumers", advised by Ki-Eun Rhee, Jan2021 - Jan2022
+      
+%   \end{itemize}
+\end{achievements}
+\bigskip
+
+
+\header{\Large{Teaching Experience}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{Simon Business School, University of Rochester, Rochester, NY}\\
+\begin{normalsize}
+    \textit{Lab Instructor}
+\end{normalsize}
+  \begin{itemize}
+      \item[-] Managerial Economics, Prof. Russell Morton, MBA \hfill{} 2026
+      \item[-] Pricing Policy, Prof. Greg Schaffer, MBA \hfill{} 2024
+      \item[-] Analytics Designs \& Applications, Prof. Elizabeth Mohr, MS in Business Analytics \hfill{} 2023
+  \end{itemize}
+\begin{normalsize}
+    \textit{Teaching Assistant}
+\end{normalsize}
+  \begin{itemize}
+      \item[-] Marketing Research, Prof. Ali Goli, MS in Marketing Analytics \hfill{} 2026
+      \item[-] Pricing Analytics, Prof. Takeaki Sunada, MS in Marketing Analytics \hfill{} 2026, 2025, 2024
+      \item[-] Predictive and Causal Analytics, Prof. Avery Haviv, MS in Business Analytics \hfill 2025, 2024
+  \end{itemize}
+\item \textbf{KAIST College of Business, Korea Advanced Institute of Science and Technology, Seoul}
+\\
+\begin{normalsize}
+    \textit{Teaching Assistant}
+\end{normalsize}
+  \begin{itemize}
+      \item[-] Corporate Entrepreneurship and New Business Development, Prof. Zong-Tae Bae, Techno-MBA \hfill{} 2022
+      \item[-] Social Enterprises and Regional Development, Prof. Jinsol Hwang, Social Entrepreneurship MBA \hfill{} 2022
+      \item[-] Special Topics in Financial Engineering$\langle$Exploring Financial Engineering Practices through Examples$\rangle$, Prof. Sae Jong Kim, Financial Engineering Program \hfill{} 2022
+      \item[-] Neuro-Business, Prof. Byungho Park, Information and Media MBA \hfill{} 2021
+      \item[-] Digital Media \& Corporate PR Strategy, Prof. Byungho Park, Information and Media MBA \hfill{} 2021
+  \end{itemize}
+\end{achievements}
+\bigskip
+
+\header{\Large{Honors and Awards}}
+\vspace{2mm}
+\begin{achievements}
+\item \textbf{2026 Spring RCL Data Set Grant} \hfill{} 2026
+    \begin{itemize}
+        \item[-] The River Campus Library, University of Rochester 
+    \end{itemize}
+\end{achievements}
+\bigskip
+
+
+
+% \header{\Large{Training Certificates}}
+% \vspace{2mm}
+% \begin{achievements}
+% \item \textbf{Big Data Analysis Expert Training Course, KIC campus}
+% \\
+% Apr2019 - Aug2019
+
+% \end{achievements}
+% \bigskip
+
+
+% \header{\Large{Military Service}}
+% \vspace{2mm}
+% \begin{achievements}
+% \justifying
+% \item \textbf{A KATUSA Rifle man, TANGO Security Force Company, Headquarters \& Headquarters Battalion, 8th Army}
+% \\
+% Jan2017 - Oct2018
+% \end{achievements}
+
+
+
+\end{document}
